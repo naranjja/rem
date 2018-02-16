@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm i",
     "start:server": "node server",
     "start:client": "cd client && npm run build",
     "start": "npm run start:client && npm run start:server",
