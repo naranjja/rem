@@ -6,11 +6,8 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/users', function(req, res, next) {
   res.json([{
   	id: 1,
-  	username: "samsepi0l"
-  }, {
-  	id: 2,
-  	username: "D0loresH4ze"
-  }]);
+  	username: "jose"
+  }])
 });
 
-app.listen(3001, () => console.log('Example app listening on port 3001!'))
+app.listen(5000, () => console.log('Example app listening on port 5000!'))
