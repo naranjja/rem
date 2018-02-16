@@ -1,0 +1,24 @@
+{
+  "name": "naked-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naranjja/naked-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naranjja/naked-react/issues"
+  },
+  "homepage": "https://github.com/naranjja/naked-react#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
