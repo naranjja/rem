@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/naranjja/naked-react#readme",
   "dependencies": {
-    "concurrently": "^3.5.1",
     "express": "^4.16.2"
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "nodemon": "^1.15.0"
   }
 }
