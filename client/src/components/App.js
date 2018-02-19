@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Container, Segment } from "semantic-ui-react"
 import Break from "./Break"
+import Menu from "./Menu"
 import Button from "./Button"
 import UploadButton from "./UploadButton"
 import List from "./List"
@@ -13,6 +14,7 @@ export default class extends Component {
   render () {
     return (
       <div className="App">
+        <Menu />
         <Break />
         <Container>
           <Segment><Button /></Segment>
