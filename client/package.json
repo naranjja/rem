@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "naked-react-front-end",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "datatables.net": "^1.10.16",
