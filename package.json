@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/naranjja/naked-react#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   },
   "devDependencies": {

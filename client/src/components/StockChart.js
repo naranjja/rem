@@ -9,7 +9,7 @@ const config = {
         selected: 1
     },
     title: {
-        text: 'Stock chart title'
+        text: "Stock chart title"
     },
     series: [{}]
 }
@@ -17,7 +17,7 @@ const config = {
 export default class extends Component {
     componentDidMount () {
         const chart = this.refs.chart.getChart()
-        fetch("/samples/stockchart")
+        fetch("/api/samples/stockchart")
             .then(response => response.json())
             .then(data => {
                 chart.series[0].name = "Series name"

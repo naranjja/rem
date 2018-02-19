@@ -5,7 +5,7 @@ export default class extends Component {
         users: []
     }
     componentDidMount () {
-        fetch("/users")
+        fetch("/api/samples/users")
             .then(res => res.json())
             .then(users => this.setState({ users }))
     }

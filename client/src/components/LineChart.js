@@ -14,7 +14,7 @@ const config = {
 export default class extends Component {
     componentDidMount () {
         const chart = this.refs.chart.getChart()
-        fetch("/samples/linechart")
+        fetch("/api/samples/linechart")
             .then(response => response.json())
             .then(data => {
                 chart.series[0].name = "Series name"
