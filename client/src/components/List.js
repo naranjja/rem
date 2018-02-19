@@ -4,12 +4,12 @@ export default class extends Component {
     state = {
         users: []
     }
-    componentDidMount() {
+    componentDidMount () {
         fetch("/users")
             .then(res => res.json())
             .then(users => this.setState({ users }))
     }
-    render() {
+    render () {
         return (
             <ul>
                 {this.state.users.map(user => <li key={user.id}>{user.username}</li>)}
