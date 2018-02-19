@@ -4,6 +4,7 @@ import Break from "./Break"
 import Button from "./Button"
 import List from "./List"
 import LineChart from "./LineChart"
+import StockChart from "./StockChart"
 
 import "semantic-ui-css/semantic.min.css"
 
@@ -16,7 +17,9 @@ export default class extends Component {
           <Segment><Button /></Segment>
           <Segment><List /></Segment>
           <Segment><LineChart /></Segment>
+          <Segment><StockChart /></Segment>
         </Container>
+        <Break />
       </div>
     )
   }
