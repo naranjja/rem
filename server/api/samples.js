@@ -37,7 +37,7 @@ router.get("/stockchart", (req, res) => {
         [1228953600000, 13.57],
         [1229040000000, 14.04],
         [1229299200000, 13.54]
-      ])
+    ])
 })
 
 router.get("/users", (req, res) => {
@@ -50,6 +50,24 @@ router.get("/users", (req, res) => {
         id: 1,
         username: "jose"
     }])
+})
+
+router.get("/table", (req, res) => {
+
+    /*
+    GET "/api/samples/table"
+    */
+
+    res.json([
+        {
+            x: 1,
+            y: 2
+        },
+        {
+            x: 3,
+            y: 4
+        }
+    ])
 })
 
 module.exports = router

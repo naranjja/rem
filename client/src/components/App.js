@@ -7,6 +7,7 @@ import UploadButton from "./UploadButton"
 import List from "./List"
 import LineChart from "./LineChart"
 import StockChart from "./StockChart"
+import Table from "./Table"
 
 import "semantic-ui-css/semantic.min.css"
 
@@ -17,6 +18,7 @@ export default class extends Component {
         <Menu />
         <Break />
         <Container>
+          <Segment><Table /></Segment>
           <Segment><Button /></Segment>
           <Segment><UploadButton /></Segment>
           <Segment><List /></Segment>
