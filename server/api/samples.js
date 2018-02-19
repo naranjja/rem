@@ -1,10 +1,20 @@
 const router = require("express").Router()
 
 router.get("/linechart", (req, res) => {
+
+    /*
+    GET "/api/samples/linechart"
+    */
+
     res.json([29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 295.6, 454.4])
 })
 
 router.get("/stockchart", (req, res) => {
+
+    /*
+    GET "/api/samples/stockchart"
+    */
+
     res.json([
         [1223510400000, 12.68],
         [1223856000000, 15.75],
@@ -31,6 +41,11 @@ router.get("/stockchart", (req, res) => {
 })
 
 router.get("/users", (req, res) => {
+
+    /*
+    GET "/api/samples/users"
+    */
+
     res.json([{
         id: 1,
         username: "jose"
