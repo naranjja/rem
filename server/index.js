@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express")
 const app = express()
 
@@ -11,29 +13,10 @@ app.use(bodyParser.urlencoded({
 const path = require('path')
 const root = path.resolve(__dirname, '..')
 
-const exposeModules = modules => {
-    modules.forEach(module => {
-        app.use(
-            "/modules/" + module,
-            express.static(path.join(root, "client", "node_modules", module))
-        )
-    })
-}
-
-exposeModules([
-    "jquery",
-    "semantic-ui-css",
-    "datatables.net",
-    "datatables.net-buttons",
-    "datatables.net-se",
-    "datatables.net-buttons-se",
-    "jszip",
-    "pdfmake",
-])
-
 require("./api")(app, [
     "samples",
     "upload",
+    "query"
 ])
 
-app.listen(5000, () => console.log("Example app listening on port 5000!"))
+app.listen(5000, () => console.log("Express API listening on port 5000!"))
