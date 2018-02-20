@@ -9,11 +9,11 @@ class MenuComponent extends Component {
   }
   logout () {
     fetch("/logout", {
-        method: 'get',
+        method: "get",
         credentials: "same-origin"
     })
     .then(result => {
-        if (result.ok) this.props.history.push('/login')
+        if (result.ok) this.props.history.push("/login")
     })
 }
     render () {

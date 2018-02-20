@@ -1,7 +1,7 @@
 const { Strategy } = require('passport-local')
 const records = require('./users')
 
-User = {
+const User = {
   findById: (id, callback) => {
     process.nextTick(() => {
         let idx = id - 1
@@ -31,12 +31,10 @@ module.exports = passport => {
     }))
 
     passport.serializeUser((user, done) => {
-        console.log('Serialized');
         done(null, user.id)
     })
 
     passport.deserializeUser((id, done) => {
-        console.log('Deserialized');
       User.findById(id, (err, user) => done(err, user))
     })
 

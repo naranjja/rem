@@ -21,7 +21,8 @@
     "mongodb",
     "semanticui",
     "highcharts",
-    "datatables"
+    "datatables",
+    "passport"
   ],
   "author": "Jose Naranjo",
   "license": "MIT",
