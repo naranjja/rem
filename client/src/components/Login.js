@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { browserHistory } from 'react-router'
 import { Container, Segment, Form, Button, Input } from "semantic-ui-react"
 import Break from "./Break"
 
@@ -16,12 +17,15 @@ export default class extends Component {
 
     handleSubmit () {
         const credentials = this.state
-        fetch("/login", {
+        fetch("/api/login", {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(credentials)
+        })
+        .then(auth => {
+            if (auth.ok) this.props.history.push('/home')
         })
     }
 

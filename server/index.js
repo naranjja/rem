@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 require("./api")(app, [
     "samples",
     "upload",
-    "query"
+    "query",
+    "login"
 ])
 
 if (process.env.NODE_ENV === "production") {
