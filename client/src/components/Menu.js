@@ -6,7 +6,7 @@ export default class extends Component {
     render () {
       return (
         <Menu fixed="top">
-            <Menu.Item as="a"><Link to="/home">Home</Link></Menu.Item>
+            <Link to="/home"><Menu.Item>Home</Menu.Item></Link>
             <Menu.Menu position="right">
                 <Menu.Item as="a">Item text</Menu.Item>
                 <Menu.Item as="a">Item text</Menu.Item>
