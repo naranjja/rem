@@ -38,6 +38,7 @@ app.post('/login', passport.authenticate('local'), (req, res) => {
 
 app.get('/logout', (req, res) => {
     req.logout()
+    res.sendStatus(200)
 })
 
 app.get('*', (req, res, next) => {
