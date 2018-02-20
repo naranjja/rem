@@ -8,8 +8,8 @@ export default class extends Component {
     constructor (props) {
         super (props)
         this.state = {
-            username: '',
-            password: ''
+            username: "",
+            password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -17,15 +17,15 @@ export default class extends Component {
     handleSubmit () {
         const credentials = this.state
         fetch("/login", {
-            method: 'post',
+            method: "post",
             headers: {
-                'content-type': 'application/json'
+                "content-type": "application/json"
             },
             credentials: "same-origin",
             body: JSON.stringify(credentials)
         })
         .then(auth => {
-            if (auth.ok) this.props.history.push('/home')
+            if (auth.ok) this.props.history.push("/home")
         })
     }
 

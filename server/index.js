@@ -1,32 +1,32 @@
 require("dotenv").config()
 
 const express = require("express")
+const path = require("path")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const passport = require("passport")
-const ensureLogin = require("connect-ensure-login").ensureLoggedIn()
-
-const path = require("path")
 const auth = require("./lib/auth")
+const { ensureLoggedIn } = require("connect-ensure-login")
 
 const app = express()
 const root = path.resolve(__dirname, "..")
-
 const port = process.env.PORT || 5000
 
-app.set("trust proxy", 1)
+app.set("trust proxy", true)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser("well-kept"))
 
-app.use(session({
-    secret: "well-kept",
-    name: "agnostic",
-    resave: true,
-    saveUninitialized: true
-}))
+app.use(
+    session ({
+        secret: "well-kept",
+        name: "agnostic",
+        resave: true,
+        saveUninitialized: true
+    })
+)
 
 require("./lib/auth")(passport)
 app.use(passport.initialize())
@@ -49,8 +49,7 @@ app.get("*", (req, res, next) => {
 require("./api")(app, [
     "samples",
     "upload",
-    "query",
-    // "login"
+    "query"
 ])
 
 if (process.env.NODE_ENV === "production") {
@@ -58,7 +57,7 @@ if (process.env.NODE_ENV === "production") {
     app.get("/login", (req, res) => {
         res.sendFile(path.join(root, "client", "build", "index.html"))
     })
-    app.get("*", ensureLogin, (req, res) => {
+    app.get("*", ensureLoggedIn, (req, res) => {
         res.sendFile(path.join(root, "client", "build", "index.html"))
     })
     app.listen(port, () => {
