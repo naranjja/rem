@@ -1,32 +1,47 @@
 import React, { Component } from "react"
 import Highstock from "react-highcharts/ReactHighstock"
 
-const config = {
-    credits: {
-        enabled: false
-    },
-    rangeSelector: {
-        selected: 1
-    },
-    title: {
-        text: "Stock chart title"
-    },
-    series: [{}]
-}
-
 export default class extends Component {
+
+    constructor (props, context) {
+        super (props, context)
+        this.state = {
+            credits: {
+                enabled: false
+            },
+            rangeSelector: {
+                selected: 1
+            },
+            title: {
+                text: "Stock chart title"
+            },
+            series: [{}]
+        }
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        if (this.state !== nextState) {  // if state changed,
+            return true  // update chart
+        }
+        return false
+    }
+
     componentDidMount () {
-        const chart = this.refs.chart.getChart()
         fetch("/api/samples/stockchart")
             .then(response => response.json())
             .then(data => {
-                chart.series[0].name = "Series name"
-                chart.series[0].setData(data)
+                this.setState({
+                    series: [{
+                        name: "",
+                        data
+                    }]
+                })
             })
     }
+
     render () {
         return (
-            <Highstock config={config} ref="chart" />
+            <Highstock config={this.state} />
         )
     }
 }
