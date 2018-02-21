@@ -1,6 +1,16 @@
 const bcrypt = require("bcrypt")
-const users = require("./../server/lib/users")
-const { writeFile } = require("fs")
+const path = require("path")
+const { writeFile, existsSync } = require("fs")
+
+let users = []
+
+try {
+    if (existsSync(path.join("server", "lib", "users.json"))) {
+        if (Array.isArray(require("./../server/lib/users.json"))) {
+            users = require("./../server/lib/users.json")
+        }
+    }
+} catch (err) {}
 
 const addUser = (username, password, name) => {
     users.forEach(user => {
@@ -15,11 +25,15 @@ const addUser = (username, password, name) => {
             username,
             hash,
         })
-        writeFile("./server/lib/users.json", JSON.stringify(users, null, 1), "utf8", (err, result) => {
-            if (err) console.error(err)
-            console.log(`User ${username} successfully created.`)
-            process.exit()
-        })
+        writeFile(
+            path.join("server", "lib", "users.json"),
+            JSON.stringify(users, null, 1),
+            "utf8",
+            (err, result) => {
+                if (err) console.error(err)
+                console.log(`User ${username} successfully created.`)
+                process.exit()
+            })
     })
 }
 
