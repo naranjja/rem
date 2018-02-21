@@ -1,8 +1,8 @@
 [
-    {
-      "id": 1,
-      "username": "jose",
-      "password": "naranjo",
-      "name": "Jose Naranjo"
-    }
-  ]
+ {
+  "id": 1,
+  "username": "jose",
+  "hash": "$2a$10$BWrx3Z3UtjSfUHGZ6t0Pt.bswssVCP9Kc5.GX2Rh/mVs94WluFUvW",
+  "name": "Jose Naranjo"
+ }
+]

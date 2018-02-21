@@ -4,12 +4,13 @@
   "description": "React.js boilerplate to bootstrap a general purpose PWA.",
   "scripts": {
     "postinstall": "cd client && npm i",
-    "start:server": "cross-env NODE_ENV=production PORT=80 node server",
-    "start:client": "cd client && npm run build",
-    "start": "npm run start:client && npm run start:server",
+    "prod:server": "cross-env NODE_ENV=production PORT=80 node server",
+    "prod:client": "cd client && npm run build",
+    "prod": "npm run prod:client && npm run prod:server",
     "dev:server": "nodemon server",
     "dev:client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run dev:client\" \"npm run dev:server\""
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:client\" \"npm run dev:server\"",
+    "start": "npm run prod"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   },
   "homepage": "https://github.com/naranjja/naked-react#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
