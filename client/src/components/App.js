@@ -1,31 +1,25 @@
 import React, { Component } from "react"
-import { Container, Segment } from "semantic-ui-react"
-import Break from "./Break"
-import Menu from "./Menu"
-import Button from "./Button"
-import UploadButton from "./UploadButton"
-import List from "./List"
-import LineChart from "./LineChart"
-import StockChart from "./StockChart"
-import Table from "./Table"
+import { Switch, Route } from "react-router-dom"
+
+import Home from "./Home"
+import Login from "./Login"
 
 import "semantic-ui-css/semantic.min.css"
+
+const style = {
+  background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://source.unsplash.com/1920x1080?nature)",
+  backgroundSize: "cover",
+  overflow: "hidden"
+}
 
 export default class extends Component {
   render () {
     return (
-      <div className="App">
-        <Menu />
-        <Break />
-        <Container>
-          <Segment><Table /></Segment>
-          <Segment><Button /></Segment>
-          <Segment><UploadButton /></Segment>
-          <Segment><List /></Segment>
-          <Segment><LineChart /></Segment>
-          <Segment><StockChart /></Segment>
-        </Container>
-        <Break />
+      <div style={style}>
+        <Switch>
+          <Route exact path="/home" component={ Home }/>
+          <Route exact path="/login" component={ Login }/>
+        </Switch>
       </div>
     )
   }

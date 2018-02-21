@@ -4,12 +4,14 @@
   "description": "React.js boilerplate to bootstrap a general purpose PWA.",
   "scripts": {
     "postinstall": "cd client && npm i",
-    "start:server": "cross-env NODE_ENV=production PORT=80 node server",
-    "start:client": "cd client && npm run build",
-    "start": "npm run start:client && npm run start:server",
+    "prod:server": "cross-env NODE_ENV=production PORT=80 node server",
+    "prod:client": "cd client && npm run build",
+    "prod": "npm run prod:client && npm run prod:server",
     "dev:server": "nodemon server",
     "dev:client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run dev:client\" \"npm run dev:server\""
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:client\" \"npm run dev:server\"",
+    "start": "npm run prod",
+    "addUser": "node scripts/addUser"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,8 @@
     "mongodb",
     "semanticui",
     "highcharts",
-    "datatables"
+    "datatables",
+    "passport"
   ],
   "author": "Jose Naranjo",
   "license": "MIT",
@@ -30,12 +33,19 @@
   },
   "homepage": "https://github.com/naranjja/naked-react#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "cross-env": "^5.1.3",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "formidable": "^1.1.1",
-    "mongodb": "^3.0.2"
+    "mongodb": "^3.0.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sweetalert-react": "^0.4.11"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",

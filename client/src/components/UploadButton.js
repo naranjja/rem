@@ -24,7 +24,7 @@ export default class extends Component {
                     ref={(input) => { fileInput = input }}
                     onChange={() => uploadFile(fileInput.files[0])}
                     style={{ display: "none" }} />
-                <Button fluid as="a" size="large" onClick={() => fileInput.click()}>Upload</Button>
+                <Button as="a" size="large" onClick={() => fileInput.click()}>Upload some file</Button>
             </div>
         )
     }

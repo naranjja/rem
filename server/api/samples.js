@@ -46,10 +46,7 @@ router.get("/users", (req, res) => {
     GET "/api/samples/users"
     */
 
-    res.json([{
-        id: 1,
-        username: "jose"
-    }])
+    res.json(require("./../lib/users"))
 })
 
 router.get("/table", (req, res) => {
