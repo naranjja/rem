@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt")
 const users = require("./../server/lib/users")
 const { writeFile } = require("fs")
 
-const createUser = (username, password, name) => {
+const addUser = (username, password, name) => {
     users.forEach(user => {
         if (user.username === username) {
             console.log(`User ${username} already exists.`)
@@ -14,9 +14,8 @@ const createUser = (username, password, name) => {
             id: users.length + 1,
             username,
             hash,
-            name,
         })
-        writeFile("./../server/lib/users.json", JSON.stringify(users, null, 1), "utf8", (err, result) => {
+        writeFile("./server/lib/users.json", JSON.stringify(users, null, 1), "utf8", (err, result) => {
             if (err) console.error(err)
             console.log(`User ${username} successfully created.`)
             process.exit()
@@ -24,10 +23,10 @@ const createUser = (username, password, name) => {
     })
 }
 
-if (process.argv.length != 5) {
-    console.log(`Usage: node scripts/createUser "<username>" "<password>" "<name>"`)
+if (process.argv.length != 4) {
+    console.log(`Usage: npm run addUser -- <username> <password>`)
 } else {
-    createUser(
+    addUser(
         process.argv[2],
         process.argv[3],
         process.argv[4],
