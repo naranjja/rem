@@ -1,7 +1,7 @@
 {
-  "name": "naked-react",
-  "version": "1.0.0",
-  "description": "React.js boilerplate to bootstrap a general purpose PWA.",
+  "name": "naked-mern",
+  "version": "1.0.1",
+  "description": "Minimalistic MERN boilerplate to bootstrap a general purpose PWA.",
   "scripts": {
     "postinstall": "cd client && npm i",
     "prod:server": "cross-env NODE_ENV=production PORT=80 node server",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naranjja/naked-react.git"
+    "url": "git+https://github.com/naranjja/naked-mern.git"
   },
   "keywords": [
     "reactjs",
@@ -29,9 +29,9 @@
   "author": "Jose Naranjo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/naranjja/naked-react/issues"
+    "url": "https://github.com/naranjja/naked-mern/issues"
   },
-  "homepage": "https://github.com/naranjja/naked-react#readme",
+  "homepage": "https://github.com/naranjja/naked-mern#readme",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",

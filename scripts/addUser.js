@@ -16,7 +16,7 @@ const addUser = (username, password, name) => {
     users.forEach(user => {
         if (user.username === username) {
             console.log(`User ${username} already exists.`)
-            process.exit()
+            process.exit(1)
         }
     })
     bcrypt.hash(password, 10, (err, hash) => {
@@ -32,7 +32,7 @@ const addUser = (username, password, name) => {
             (err, result) => {
                 if (err) console.error(err)
                 console.log(`User ${username} successfully created.`)
-                process.exit()
+                process.exit(0)
             })
     })
 }

@@ -1,6 +1,13 @@
 const { Strategy } = require("passport-local")
-const users = require("./users")
 const bcrypt = require("bcrypt")
+
+let users = null
+try {
+    users = require("./users")
+} catch (err) {
+    console.error(`No users found. Please add user using "npm run addUser -- <username> <password>"`)
+    process.exit(1)
+}
 
 const User = {
     findById: (id, callback) => {

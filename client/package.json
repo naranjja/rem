@@ -1,6 +1,6 @@
 {
-  "name": "naked-react-front-end",
-  "version": "1.0.0",
+  "name": "naked-mern",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "datatables.net": "^1.10.16",
