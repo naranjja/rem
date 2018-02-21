@@ -3,34 +3,9 @@ import Highcharts from "react-highcharts"
 
 export default class extends Component {
 
-    constructor (props, context) {
-        super (props, context)
-        const showAlert = this.props.showAlert
-        this.state = {
-            credits: {
-                enabled: false
-            },
-            title: {
-                text: "Chart title"
-            },
-            plotOptions: {
-                series: {
-                    point: {
-                        events: {
-                            click: (e) => {
-                                showAlert(e.point.x, e.point.y)
-                            }
-                        }
-                    }
-                }
-            },
-            series: [{}]
-        }
-    }
-
     shouldComponentUpdate (nextProps, nextState) {
-        if (this.state !== nextState) {  // if state changed,
-            return true  // update chart
+        if (this.props.config.series !== nextProps.config.series) {  // if data has changed
+            return true  // update the chart
         }
         return false
     }
@@ -39,18 +14,13 @@ export default class extends Component {
         fetch("/api/samples/linechart")
             .then(response => response.json())
             .then(data => {
-                this.setState({
-                    series: [{
-                        name: "",
-                        data
-                    }]
-                })
+                this.props.loadData(data)
             })
     }
 
     render () {
         return (
-            <Highcharts config={this.state} />
+            <Highcharts config={this.props.config} />
         )
     }
 }
