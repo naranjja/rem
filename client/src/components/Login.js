@@ -62,7 +62,7 @@ export default class extends Component {
                                 </Segment>
                             </Form>
                             <br></br>
-                            <h2 style={{ color: "white" }}>naked-react</h2>
+                            <h2 style={{ color: "white" }}>naked-mern</h2>
                         </Grid.Column>
                     </Grid>
                 </Container>
