@@ -6,10 +6,16 @@ import Login from "./Login"
 
 import "semantic-ui-css/semantic.min.css"
 
+const style = {
+  backgroundImage: 'url(bg.jpg)',
+  backgroundSize: 'cover',
+  overflow: 'hidden'
+}
+
 export default class extends Component {
   render () {
     return (
-      <div>
+      <div style={style}>
         <Switch>
           <Route exact path="/home" component={ Home }/>
           <Route exact path="/login" component={ Login }/>

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Segment, Form, Button, Input } from "semantic-ui-react"
+import { Container, Segment, Form, Button, Input, Grid } from "semantic-ui-react"
 import Break from "./Break"
 
 import "semantic-ui-css/semantic.min.css"
@@ -31,29 +31,38 @@ export default class extends Component {
 
     render () {
         return (
-            <Container>
+            <div>
                 <Break />
-                <Segment>
-                    <Form>
-                        <Form.Field>
-                            <Input 
-                                icon="user" 
-                                iconPosition="left" 
-                                onChange={(e, input) => this.setState({ username: input.value })}
-                                placeholder="Ingrese su nombre de usuario" />
-                        </Form.Field>
-                        <Form.Field>
-                            <Input 
-                                icon="lock" 
-                                iconPosition="left" 
-                                type="password" 
-                                onChange={(e, input) => this.setState({ password: input.value })}
-                                placeholder="Ingrese su contraseña" />
-                        </Form.Field>
-                        <Button fluid size="large" onClick={this.handleSubmit}>Submit</Button>
-                    </Form>
-                </Segment>
-            </Container>
+                <Container>
+                    <Grid verticalAlign="middle" textAlign="center" style={{ height: "100%" }}>
+                        <Grid.Column style={{ maxWidth: "500px" }}>
+                            <Form size="large">
+                                <Segment>
+                                    <Form.Field>
+                                        <Input 
+                                            icon="user" 
+                                            iconPosition="left" 
+                                            onChange={(e, input) => this.setState({ username: input.value })}
+                                            placeholder="Enter your username" />
+                                    </Form.Field>
+                                    <Form.Field>
+                                        <Input 
+                                            icon="lock" 
+                                            iconPosition="left" 
+                                            type="password" 
+                                            onChange={(e, input) => this.setState({ password: input.value })}
+                                            placeholder="Enter your password" />
+                                    </Form.Field>
+                                    <Button fluid size="large" onClick={this.handleSubmit}>Login</Button>
+                                </Segment>
+                            </Form>
+                            <br></br>
+                            <h2 style={{ color: "white" }}>naked-react</h2>
+                        </Grid.Column>
+                    </Grid>
+                </Container>
+                <Break />
+            </div>
         )
     }
 }

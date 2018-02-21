@@ -60,7 +60,7 @@ export default class extends Component {
     }
     render() {
         return (
-            <table className="ui celled table" ref="table" />
+            <table className="ui celled unstackable table" ref="table" />
         )
     }
 }
