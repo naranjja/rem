@@ -5,7 +5,7 @@ import Menu from "./Menu"
 import AlertButton from "./AlertButton"
 import UploadButton from "./UploadButton"
 import List from "./List"
-import LineChart from "./LineChart"
+import ChartComponent from "./ChartComponent"
 import StockChart from "./StockChart"
 import Table from "./Table"
 import Alert from "./Alert"
@@ -81,7 +81,7 @@ export default class extends Component {
             
             <Segment>
               <Label attached="top">Highcharts</Label>
-              <LineChart
+              <ChartComponent
                 showAlert = { this.showAlert }
               />
             </Segment>

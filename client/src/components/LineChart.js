@@ -29,11 +29,9 @@ export default class extends Component {
     }
 
     shouldComponentUpdate (nextProps, nextState) {
-
         if (this.state !== nextState) {  // if state changed,
             return true  // update chart
         }
-
         return false
     }
 
