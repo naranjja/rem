@@ -5,11 +5,8 @@ export default class extends Component {
 
     constructor (props, context) {
         super (props, context)
-        this.getConfig = this.getConfig.bind(this)
-    }
-
-    getConfig () {
-        return {
+        const showAlert = this.props.showAlert
+        this.state = {
             credits: {
                 enabled: false
             },
@@ -21,7 +18,7 @@ export default class extends Component {
                     point: {
                         events: {
                             click: (e) => {
-                                this.props.showAlert(e.point.x, e.point.y)
+                                showAlert(e.point.x, e.point.y)
                             }
                         }
                     }
@@ -31,23 +28,31 @@ export default class extends Component {
         }
     }
 
-    shouldComponentUpdate () {
+    shouldComponentUpdate (nextProps, nextState) {
+
+        if (this.state !== nextState) {  // if state changed,
+            return true  // update chart
+        }
+
         return false
     }
 
     componentDidMount () {
-        const chart = this.refs.chart.getChart()
         fetch("/api/samples/linechart")
             .then(response => response.json())
             .then(data => {
-                chart.series[0].name = "Series name"
-                chart.series[0].setData(data)
+                this.setState({
+                    series: [{
+                        name: "",
+                        data
+                    }]
+                })
             })
     }
 
     render () {
         return (
-            <Highcharts config={this.getConfig()} ref="chart" />
+            <Highcharts config={this.state} />
         )
     }
 }
