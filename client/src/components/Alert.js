@@ -3,7 +3,7 @@ import SweetAlert from "sweetalert-react"
 
 import "sweetalert/dist/sweetalert.css"
 
-const titles = ["Aha!", "Wow!", "Amazing!", "Incredible!", "Great!"]
+const titles = ["Wow!", "Amazing!", "Incredible!", "Great!"]
 
 export default class extends Component {
 
