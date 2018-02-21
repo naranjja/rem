@@ -16,7 +16,7 @@ export default class extends Component {
                 <p>Registered users:</p>
                 {this.state.users.map(user => {
                     return (
-                        <List.Item>
+                        <List.Item key={user.id}>
                             <List.Icon name='user' />
                             <List.Content>{user.username}</List.Content>
                         </List.Item>

@@ -7,9 +7,9 @@ import Login from "./Login"
 import "semantic-ui-css/semantic.min.css"
 
 const style = {
-  backgroundImage: 'url(bg.jpg)',
-  backgroundSize: 'cover',
-  overflow: 'hidden'
+  background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://source.unsplash.com/1920x1080?nature)",
+  backgroundSize: "cover",
+  overflow: "hidden"
 }
 
 export default class extends Component {

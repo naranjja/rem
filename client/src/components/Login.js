@@ -33,6 +33,7 @@ export default class extends Component {
         return (
             <div>
                 <Break />
+                <Break />
                 <Container>
                     <Grid verticalAlign="middle" textAlign="center" style={{ height: "100%" }}>
                         <Grid.Column style={{ maxWidth: "500px" }}>
