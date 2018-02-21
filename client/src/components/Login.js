@@ -1,15 +1,18 @@
 import React, { Component } from "react"
 import { Container, Segment, Form, Button, Input, Grid } from "semantic-ui-react"
+import SweetAlert from "sweetalert-react"
 import Break from "./Break"
 
 import "semantic-ui-css/semantic.min.css"
 
 export default class extends Component {
+
     constructor (props) {
         super (props)
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            alert: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -26,6 +29,7 @@ export default class extends Component {
         })
         .then(auth => {
             if (auth.ok) this.props.history.push("/home")
+            else this.setState({ alert: true })
         })
     }
 
@@ -63,6 +67,13 @@ export default class extends Component {
                     </Grid>
                 </Container>
                 <Break />
+                <SweetAlert
+                    show={this.state.alert}
+                    title="Wrong!"
+                    type="error"
+                    text="The entered information does not match our records."
+                    onConfirm={() => this.setState({ alert: false })}
+                />
             </div>
         )
     }
