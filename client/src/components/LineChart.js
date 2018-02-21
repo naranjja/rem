@@ -1,17 +1,40 @@
 import React, { Component } from "react"
 import Highcharts from "react-highcharts"
 
-const config = {
-    credits: {
-        enabled: false
-    },
-    title: {
-        text: "Chart title"
-    },
-    series: [{}]
-}
-
 export default class extends Component {
+
+    constructor (props, context) {
+        super (props, context)
+        this.getConfig = this.getConfig.bind(this)
+    }
+
+    getConfig () {
+        return {
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: "Chart title"
+            },
+            plotOptions: {
+                series: {
+                    point: {
+                        events: {
+                            click: () => {
+                                this.props.showAlert()
+                            }
+                        }
+                    }
+                }
+            },
+            series: [{}]
+        }
+    }
+
+    shouldComponentUpdate () {
+        return false
+    }
+
     componentDidMount () {
         const chart = this.refs.chart.getChart()
         fetch("/api/samples/linechart")
@@ -21,9 +44,10 @@ export default class extends Component {
                 chart.series[0].setData(data)
             })
     }
+
     render () {
         return (
-            <Highcharts config={config} ref="chart" />
+            <Highcharts config={this.getConfig()} ref="chart" />
         )
     }
 }
