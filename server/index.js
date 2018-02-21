@@ -57,7 +57,7 @@ if (process.env.NODE_ENV === "production") {
     app.get("/login", (req, res) => {
         res.sendFile(path.join(root, "client", "build", "index.html"))
     })
-    app.get("*", ensureLoggedIn, (req, res) => {
+    app.get("*", ensureLoggedIn(), (req, res) => {
         res.sendFile(path.join(root, "client", "build", "index.html"))
     })
     app.listen(port, () => {
