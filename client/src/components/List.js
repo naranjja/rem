@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { List } from "semantic-ui-react"
 
 export default class extends Component {
     state = {
@@ -11,9 +12,17 @@ export default class extends Component {
     }
     render () {
         return (
-            <ul>
-                {this.state.users.map(user => <li key={user.id}>{user.username}</li>)}
-            </ul>
+            <List>
+                <p>Registered users:</p>
+                {this.state.users.map(user => {
+                    return (
+                        <List.Item>
+                            <List.Icon name='user' />
+                            <List.Content>{user.username}</List.Content>
+                        </List.Item>
+                    )
+                })}
+            </List>
         )
     }
 }

@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react"
 export default class extends Component {
     render () {
       return (
-        <Button fluid as="a" size="large">Large button</Button>
+        <Button as="a" size="large">Trigger an alert</Button>
       )
     }
   }
