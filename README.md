@@ -20,3 +20,8 @@ This mode runs hot module reloading on React.js frontend (as a server) on port 3
 - `npm run` `prod`
 
 This mode builds React.js frontend using Webpack and then serves it on an Express server running on port 80.
+
+---
+
+## Credits
+Put together by Jose Naranjo.
