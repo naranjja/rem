@@ -20,8 +20,8 @@ export default class extends Component {
                 series: {
                     point: {
                         events: {
-                            click: () => {
-                                this.props.showAlert()
+                            click: (e) => {
+                                this.props.showAlert(e.point.x, e.point.y)
                             }
                         }
                     }

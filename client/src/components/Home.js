@@ -15,15 +15,19 @@ export default class extends Component {
   constructor () {
     super ()
     this.state = {
-      isAlertShown: false
+      isAlertShown: false,
+      x: "",
+      y: "",
     }
     this.showAlert = this.showAlert.bind(this)
     this.hideAlert = this.hideAlert.bind(this)
   }
 
-  showAlert () {
+  showAlert (x, y) {
     this.setState({
-      isAlertShown: true
+      isAlertShown: true,
+      x,
+      y
     })
   }
 
@@ -43,6 +47,8 @@ export default class extends Component {
             <Alert
               hideAlert = { this.hideAlert }
               isAlertShown = { this.state.isAlertShown }
+              x = { this.state.x }
+              y = { this.state.y }
              />
 
             <Segment>
