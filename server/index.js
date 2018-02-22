@@ -18,7 +18,6 @@ app.set("trust proxy", true)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser("well-kept"))
-
 app.use(
     session ({
         secret: "well-kept",

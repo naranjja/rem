@@ -42,7 +42,7 @@ export default class extends Component {
                     <Grid verticalAlign="middle" textAlign="center" style={{ height: "100%" }}>
                         <Grid.Column style={{ maxWidth: "500px" }}>
                             <Form size="large">
-                                <Segment>
+                                <Segment raised secondary>
                                     <Form.Field>
                                         <Input 
                                             icon="user" 

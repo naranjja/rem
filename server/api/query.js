@@ -1,10 +1,10 @@
 const router = require("express").Router()
-const { select, count } = require('./../lib/db')
+const { select, count } = require("./../lib/db")
 
-router.post('/select', (req, res) => {
+router.post("/select", (req, res) => {
     
     /*
-    POST '/api/query/select'
+    POST "/api/query/select"
     Header:
         Content-Type: application/json
     Body:
@@ -40,10 +40,10 @@ router.post('/select', (req, res) => {
     }
 })
 
-router.post('/count', (req, res) => {
+router.post("/count", (req, res) => {
 
     /*
-    POST '/api/query/count'
+    POST "/api/query/count"
     Header:
         Content-Type: application/json
     Body:
