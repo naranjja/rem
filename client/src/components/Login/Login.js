@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Container, Segment, Form, Button, Input, Grid } from "semantic-ui-react"
 import SweetAlert from "sweetalert-react"
-import Break from "./Break"
+import Break from "./../Break"
 
 import "semantic-ui-css/semantic.min.css"
 

@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { Container, Segment, Label, Grid } from "semantic-ui-react"
-import Break from "./Break"
-import Menu from "./Menu"
-import AlertButton from "./AlertButton"
-import UploadButton from "./UploadButton"
-import List from "./List"
-import ChartComponent from "./ChartComponent"
-import StockChart from "./StockChart"
-import Table from "./Table"
-import Alert from "./Alert"
+import Break from "./../Break"
+import Menu from "./../Menu"
+import AlertButton from "./../AlertButton"
+import UploadButton from "./../UploadButton"
+import List from "./../List"
+import ChartComponent from "./../ChartComponent"
+import StockChart from "./../StockChart"
+import Table from "./../Table"
+import Alert from "./../Alert"
 
 export default class extends Component {
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
 
-import Home from "./Home"
-import Login from "./Login"
+import Home from "./../Home/Home"
+import Login from "./../Login/Login"
 
 import "semantic-ui-css/semantic.min.css"
 
