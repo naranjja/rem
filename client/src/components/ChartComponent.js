@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import DataButton from "./DataButton"
+import AddPointButton from "./AddPointButton"
+import LoadDataButton from "./LoadDataButton"
 import LineChart from "./LineChart"
-
-const seriesName = "some series"
 
 export default class extends Component {
 
@@ -31,26 +30,25 @@ export default class extends Component {
         }
         this.loadData = this.loadData.bind(this)
         this.addPoint = this.addPoint.bind(this)
+        this.getChart = this.getChart.bind(this)
     }
 
     loadData (data) {
-        this.setState({
+        this.setState(prevState => ({
             series: [{
-                name: seriesName,
+                ...prevState.series[0],
                 data
             }]
-        })
+        }))
     }
 
-    addPoint (x, y) {
-        const dataCopy = this.state.series[0].data
-        dataCopy.push(y)
-        this.setState({
-            series: [{
-                name: seriesName,
-                data: dataCopy
-            }]
-        })
+    getChart (ref) {
+        this.chartRef = ref
+    }
+
+    addPoint (point) {
+        const chart = this.chartRef.getChart()
+        chart.series[0].addPoint(point)
     }
 
     render () {
@@ -58,10 +56,14 @@ export default class extends Component {
             <div>
                 <LineChart
                     config = { this.state }
+                    getChart = { this.getChart }
                     loadData = { this.loadData }
                 />
-                <DataButton
+                <AddPointButton
                     addPoint = { this.addPoint }
+                />
+                <LoadDataButton
+                    loadData = { this.loadData }
                 />
             </div>
         )

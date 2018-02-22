@@ -20,7 +20,7 @@ export default class extends Component {
 
     render () {
         return (
-            <Highcharts config={this.props.config} />
+            <Highcharts ref={this.props.getChart} config={this.props.config} />
         )
     }
 }
