@@ -6,13 +6,13 @@ import "datatables.net"
 import "datatables.net-se/js/dataTables.semanticui"
 import "datatables.net-se/css/dataTables.semanticui.css"
 import "datatables.net-buttons/js/dataTables.buttons"
-import "datatables.net-buttons/js/buttons.html5"
-import "datatables.net-buttons/js/buttons.colVis"
-import "datatables.net-buttons-se/js/buttons.semanticui"
+import "datatables.net-buttons/js/buttons.html5.min"
+import "datatables.net-buttons/js/buttons.colVis.min"
+import "datatables.net-buttons-se/js/buttons.semanticui.min"
 import "datatables.net-buttons-se/css/buttons.semanticui.min.css"
-import "jszip/dist/jszip"
+import "jszip/dist/jszip.min"
 
-import pdfMake from "pdfmake/build/pdfmake"
+import pdfMake from "pdfmake/build/pdfmake.min"
 import pdfFonts from "pdfmake/build/vfs_fonts"
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
@@ -60,7 +60,7 @@ export default class extends Component {
     }
     render() {
         return (
-            <table className="ui celled unstackable table" ref="table" />
+            <table className="ui celled unstackable selectable table" ref="table" />
         )
     }
 }
