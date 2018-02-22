@@ -1,29 +1,26 @@
 import React, { Component } from "react"
 import Highcharts from "react-highcharts"
 
-const config = {
-    credits: {
-        enabled: false
-    },
-    title: {
-        text: "Chart title"
-    },
-    series: [{}]
-}
-
 export default class extends Component {
+
+    shouldComponentUpdate (nextProps, nextState) {
+        if (this.props.config.series !== nextProps.config.series) {  // if data has changed
+            return true  // update the chart
+        }
+        return false
+    }
+
     componentDidMount () {
-        const chart = this.refs.chart.getChart()
         fetch("/api/samples/linechart")
             .then(response => response.json())
             .then(data => {
-                chart.series[0].name = "Series name"
-                chart.series[0].setData(data)
+                this.props.loadData(data)
             })
     }
+
     render () {
         return (
-            <Highcharts config={config} ref="chart" />
+            <Highcharts ref={this.props.getChart} config={this.props.config} />
         )
     }
 }
