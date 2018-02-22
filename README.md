@@ -1,5 +1,5 @@
-# :mens: naked-mern
-Minimalistic MERN boilerplate to bootstrap a general purpose PWA
+# :moon: rem
+Minimalistic boilerplate to bootstrap a general purpose PWA
 
 ### Requirements
 - [Node.js](https://nodejs.org/en/download/)
@@ -21,7 +21,5 @@ This mode runs hot module reloading on React.js frontend (as a server) on port 3
 
 This mode builds React.js frontend using Webpack and then serves it on an Express server running on port 80.
 
----
-
-## Credits
+### Credits
 Put together by Jose Naranjo.
